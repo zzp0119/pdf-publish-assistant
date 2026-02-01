@@ -274,6 +274,6 @@ pdf-demo/
 
 MIT
 
-## 📄联系作者
+## 📄 联系作者
 
-![image-20260201221814432](C:\Users\zhiwang\AppData\Roaming\Typora\typora-user-images\image-20260201221814432.png)
+![联系方式](images/contact.png)
