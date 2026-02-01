@@ -1,0 +1,10 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+  /* 移除最大宽度限制，让管理端占满PC屏幕 */
+}
+
+/* 清除Vite默认样式 */
+.logo {
+  display: none;
+}

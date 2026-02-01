@@ -1,0 +1,238 @@
+.upload-area-container {
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 100;
+}
+
+.upload-area-container .ant-upload {
+  position: relative;
+  z-index: 100;
+}
+
+.upload-area-container .ant-upload-wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+.upload-area-container .ant-upload-drag {
+  position: relative;
+  z-index: 100;
+}
+
+.upload-area-container .ant-upload-drag-container {
+  position: relative;
+  z-index: 100;
+}
+
+/* 移除 Ant Design 组件的所有伪元素 */
+.upload-area-container .ant-upload::before,
+.upload-area-container .ant-upload::after,
+.upload-area-container .ant-upload-wrapper::before,
+.upload-area-container .ant-upload-wrapper::after,
+.upload-area-container .ant-upload-drag::before,
+.upload-area-container .ant-upload-drag::after,
+.upload-area-container .ant-upload-drag-container::before,
+.upload-area-container .ant-upload-drag-container::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 隐藏文件列表（我们使用自定义上传，不需要默认列表） */
+.upload-area-container .ant-upload-list {
+  display: none !important;
+}
+
+.upload-area-container .ant-upload-list-item {
+  display: none !important;
+}
+
+.upload-area-container .ant-upload-list-item-container {
+  display: none !important;
+}
+
+/* 确保没有多余的分割线或边框 */
+.upload-area-container .ant-divider,
+.upload-area-container .ant-divider-vertical {
+  display: none !important;
+}
+
+/* 隐藏所有可能的按钮和链接 */
+.upload-area-container .ant-upload-list-item-thumbnail,
+.upload-area-container .ant-upload-list-item-name,
+.upload-area-container .ant-upload-list-item-actions {
+  display: none !important;
+}
+
+/* 强制隐藏所有可能导致竖线的元素 */
+.upload-area-container .ant-upload-drag [class*="anticon"] {
+  border: none !important;
+}
+
+.upload-area-container a,
+.upload-area-container button {
+  border: none !important;
+}
+
+/* 隐藏可能出现的多余图标或按钮 */
+.upload-area-container .anticon {
+  border: none !important;
+}
+
+.upload-area-container .ant-btn {
+  border: none !important;
+}
+
+/* 隐藏滚动条 */
+.upload-area-container *,
+.upload-area-container *::-webkit-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.upload-area-container *::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* 终极方案：移除所有元素的边框 */
+.upload-area-container *,
+.upload-area-container *::before,
+.upload-area-container *::after {
+  border: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+.upload-dragger {
+  background: #e6f7ff !important;
+  border: 2px dashed #d9d9d9 !important;
+  border-radius: 8px !important;
+  padding: 40px 20px !important;
+  transition: all 0.3s ease;
+  position: relative !important;
+  z-index: 100 !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  box-shadow: 0 0 0 10px #e6f7ff !important;
+}
+
+.upload-dragger .ant-upload-drag-container {
+  overflow: hidden !important;
+  position: relative !important;
+  z-index: 101 !important;
+  background: #e6f7ff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.upload-dragger > * {
+  background: #e6f7ff !important;
+  margin: 0 !important;
+}
+
+/* 移除可能的伪元素 */
+.upload-dragger::before,
+.upload-dragger::after {
+  display: none !important;
+}
+
+/* 尝试找到并隐藏竖线 - 强制所有子元素没有左边框和右边框 */
+.upload-dragger p,
+.upload-dragger div,
+.upload-dragger span {
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+}
+
+/* 强制隐藏所有可能的分割线 */
+.upload-dragger .ant-upload-drag-container > * {
+  border: none !important;
+}
+
+/* 如果是某个绝对定位的元素，强制隐藏 */
+.upload-dragger [style*="position: absolute"],
+.upload-dragger [style*="position:absolute"] {
+  display: none !important;
+}
+
+/* 移除 Ant Design Upload 组件可能的伪元素 */
+.ant-upload-drag::before,
+.ant-upload-drag::after,
+.ant-upload-drag-container::before,
+.ant-upload-drag-container::after {
+  display: none !important;
+}
+
+.upload-dragger .ant-upload-drag-container {
+  position: relative;
+  z-index: 100;
+}
+
+.upload-dragger:hover {
+  border-color: #1890ff !important;
+  background: #f0f8ff !important;
+}
+
+.upload-dragger.ant-upload-disabled {
+  border-color: #d9d9d9 !important;
+  background: #f5f5f5 !important;
+  cursor: not-allowed;
+}
+
+.ant-upload-drag-icon {
+  margin-bottom: 16px;
+}
+
+.ant-upload-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.ant-upload-hint {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+.upload-progress-bar {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin-top: 16px;
+  overflow: hidden;
+  border: none !important;
+}
+
+.upload-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1890ff 0%, #40a9ff 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  position: relative;
+  border: none !important;
+}
+
+.upload-progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  z-index: 1;
+  display: block;
+  width: auto;
+  height: auto;
+  border: none !important;
+}

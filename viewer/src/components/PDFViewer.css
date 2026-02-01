@@ -1,0 +1,269 @@
+/* PDF 查看器容器 */
+.pdf-viewer {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 加载状态 */
+.pdf-viewer-loading,
+.pdf-viewer-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #1890ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-progress {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #1890ff;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 桌面端顶部控制栏 */
+.pdf-header-desktop {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdf-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.pdf-controls-desktop {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.download-btn {
+  padding: 8px 20px;
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #40a9ff;
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.zoom-controls button {
+  padding: 4px 12px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.zoom-controls button:hover:not(:disabled) {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+.zoom-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.zoom-level {
+  font-size: 14px;
+  color: #666;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* 移动端顶部控制栏 */
+.pdf-header-mobile {
+  background-color: #fff;
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.pdf-header-mobile .pdf-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.zoom-controls-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.zoom-controls-mobile button {
+  padding: 6px 16px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.download-btn-mobile {
+  width: 100%;
+  padding: 10px;
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* PDF 内容区域 */
+.pdf-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.pdf-page {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.rendering-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* 桌面端翻页按钮 */
+.pagination-desktop {
+  background-color: #fff;
+  padding: 16px 40px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.page-btn {
+  padding: 8px 20px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 移动端翻页按钮 */
+.pagination-mobile {
+  background-color: #fff;
+  padding: 12px 16px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  bottom: 0;
+}
+
+.page-btn-mobile {
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.page-indicator {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .pdf-content {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .pdf-page {
+    max-width: 100%;
+  }
+}
